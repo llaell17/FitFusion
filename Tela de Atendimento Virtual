@@ -3,192 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FitFusion - Atendimento Virtual</title>
+    <title>Formulário de Contato</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: system-ui, -apple-system, sans-serif;
-        }
-
         body {
-            min-height: 100vh;
-            background-color: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
         }
-
         .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            flex-wrap: wrap;
             max-width: 1200px;
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
         }
-
-        .image-section {
-            background-image: url('/placeholder.svg?height=600&width=600');
-            background-size: cover;
-            background-position: center;
-            min-height: 600px;
+        .image-container {
+            flex: 1;
+            min-width: 300px;
+            margin-right: 20px;
         }
-
-        .form-section {
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
+        .image-container img {
+            max-width: 100%;
+            height: auto;
         }
-
-        .title {
-            font-size: 1.8rem;
-            font-weight: bold;
-            text-align: center;
-            color: #1a1a1a;
+        .content {
+            flex: 1;
+            min-width: 300px;
         }
-
-        .feedback-box {
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            padding: 2rem;
+        h2 {
+            margin-top: 0;
         }
-
-        .subtitle {
-            font-size: 1.5rem;
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        .rating {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .star {
-            font-size: 2rem;
-            cursor: pointer;
-            color: #d1d5db;
-            transition: color 0.2s;
-        }
-
-        .star.active {
-            color: #fbbf24;
-        }
-
         textarea {
             width: 100%;
-            min-height: 150px;
-            padding: 1rem;
-            border: 1px solid #e5e7eb;
-            border-radius: 6px;
-            resize: vertical;
-            margin-top: 1rem;
-            font-size: 1rem;
+            padding: 10px;
+            margin-top: 10px;
+            box-sizing: border-box;
         }
-
-        textarea:focus {
-            outline: none;
-            border-color: #2563eb;
-            ring: 2px solid #2563eb;
+        .rating {
+            margin-top: 20px;
         }
-
-        .logo {
-            text-align: center;
-            margin-top: 2rem;
+        .stars {
+            font-size: 24px;
+            color: #ccc;
         }
-
-        .logo img {
-            height: 40px;
+        .stars span {
+            cursor: pointer;
         }
-
+        .stars span.active {
+            color: gold;
+        }
         @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
-
-            .image-section {
-                min-height: 300px;
+            .image-container {
+                margin-right: 0;
+                margin-bottom: 20px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="image 10.png" alt="FitFusion"
-        <div class="form-section">
-            <h1 class="title">Fale conosco através do nosso atendimento virtual!</h1>
-            
-            <div class="feedback-box">
-                <h2 class="subtitle">Avalie nosso serviço!</h2>
-                <p class="subtitle">Conte-nos como foi sua experiência!</p>
-                
-                <div class="rating" id="rating">
-                    <span class="star" data-value="1">★</span>
-                    <span class="star" data-value="2">★</span>
-                    <span class="star" data-value="3">★</span>
-                    <span class="star" data-value="4">★</span>
-                    <span class="star" data-value="5">★</span>
+        <div class="image-container">
+            <img src="image 10.png" alt="Homem fazendo exercício">
+        </div>
+        <div class="content">
+            <h2>Fale conosco através do nosso atendimento virtual!</h2>
+            <textarea id="helpTextarea" rows="4" placeholder="Como podemos ajudar?"></textarea>
+            <div class="rating">
+                <h3>Avalie nosso serviço!</h3>
+                <p>Conte-nos como foi sua experiência!</p>
+                <div class="stars" id="ratingStars">
+                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
                 </div>
-
-                <textarea 
-                    placeholder="Como podemos ajudar?...."
-                    id="feedback"
-                ></textarea>
-
-                <div class="logo">
-                    <svg width="120" height="40" viewBox="0 0 120 40">
-                        <text x="40" y="25" font-family="Arial Black" font-size="20" fill="black">
-                            FitFusion
-                        </text>
-                        <path d="M20 10 H35 M27.5 5 V15" stroke="black" stroke-width="3"/>
-                    </svg>
-                </div>
+                <textarea id="feedbackTextarea" rows="4" placeholder="Como foi sua experiência..."></textarea>
+                <p>FitFusion</p>
             </div>
         </div>
     </div>
 
     <script>
-        const ratingContainer = document.getElementById('rating');
-        const stars = document.querySelectorAll('.star');
-        let currentRating = 0;
-
-        function updateStars(rating) {
-            stars.forEach(star => {
-                const value = parseInt(star.dataset.value);
-                star.classList.toggle('active', value <= rating);
-            });
-        }
-
-        ratingContainer.addEventListener('click', (e) => {
-            if (e.target.classList.contains('star')) {
-                currentRating = parseInt(e.target.dataset.value);
-                updateStars(currentRating);
+        document.getElementById('ratingStars').addEventListener('click', function(e) {
+            if (e.target.tagName === 'SPAN') {
+                const stars = this.children;
+                const clickedIndex = Array.from(stars).indexOf(e.target);
+                
+                for (let i = 0; i < stars.length; i++) {
+                    if (i <= clickedIndex) {
+                        stars[i].textContent = '★';
+                        stars[i].classList.add('active');
+                    } else {
+                        stars[i].textContent = '☆';
+                        stars[i].classList.remove('active');
+                    }
+                }
             }
-        });
-
-        ratingContainer.addEventListener('mouseover', (e) => {
-            if (e.target.classList.contains('star')) {
-                const rating = parseInt(e.target.dataset.value);
-                updateStars(rating);
-            }
-        });
-
-        ratingContainer.addEventListener('mouseout', () => {
-            updateStars(currentRating);
-        });
-
-        document.getElementById('feedback').addEventListener('input', function(e) {
-            this.style.height = 'auto';
-            this.style.height = (this.scrollHeight) + 'px';
         });
     </script>
 </body>

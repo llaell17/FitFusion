@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -19,7 +20,7 @@
             <a href="#conta">Configurações da conta</a>
             <a href="#seguranca" class="active">Segurança</a>
             <a href="#atualizacoes">Atualizações e backup</a>
-            <a href="#contato">Contato</a>
+            <a href="contatos.html">Contato</a>
         </nav>
     </aside>
 
@@ -73,33 +74,22 @@
         </div>
     </main>
 
-    <a href="#" class="back-button">
+    <a href="ambiente.html" class="back-button">
         <i class="fas fa-arrow-left"></i>
         Voltar
     </a>
 
     <script src="script.js"></script>
+
+</body>
+     
+
+
+
+
 </body>
 </html>
 
-#JavaScript#
-
-// Toggle active class in sidebar
-document.querySelectorAll('.sidebar-nav a').forEach(link => {
-    link.addEventListener('click', (e) => {
-        document.querySelector('.sidebar-nav a.active')?.classList.remove('active');
-        e.target.classList.add('active');
-    });
-});
-
-// Handle radio toggle
-document.querySelectorAll('input[type="radio"]').forEach(radio => {
-    radio.addEventListener('change', (e) => {
-        const labels = e.target.parentElement.querySelectorAll('label');
-        labels.forEach(label => label.style.fontWeight = '400');
-        e.target.nextElementSibling.style.fontWeight = '500';
-    });
-});
 
 
 #CSS#

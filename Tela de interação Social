@@ -3,529 +3,353 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FitFusion</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>FitFusion - Ambiente Social</title>
     <style>
-        * {
+        body, html {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
         }
 
-        body {
-            background-color: #f0f2f5;
-        }
-
-        .container {
+        .flex {
             display: flex;
+        }
+
+        .min-h-screen {
             min-height: 100vh;
         }
 
-        
+        .bg-background {
+            background-color: #ffffff;
+        }
+
         .sidebar {
-            width: 280px;
-            padding: 20px;
-            position: fixed;
-            height: 100vh;
-            background: white;
-            border-right: 1px solid #e1e8ed;
+            width: 256px;
+            border-right: 1px solid #e0e0e0;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px;
-            margin-bottom: 20px;
-        }
-
-        .logo img {
-            width:150px;
-            height: 80px;
-        }
-
-        .logo h1 {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .nav-item {
-            display: flex;
-            align-items: center;
-            padding: 12px 15px;
-            margin: 4px 0;
-            border-radius: 9999px;
-            text-decoration: none;
-            color: #0f1419;
-            font-size: 16px;
-            transition: background-color 0.2s;
-        }
-
-        .nav-item:hover {
-            background-color: #f7f9f9;
-        }
-
-        .nav-item i {
-            margin-right: 15px;
-            font-size: 20px;
-        }
-
-       
-        .main-content {
-            flex: 1;
-            margin-left: 280px;
-            margin-right: 350px;
-            border-right: 1px solid #e1e8ed;
-            min-height: 100vh;
-        }
-
-        .post-form {
-            padding: 16px;
-            border-bottom: 1px solid #e1e8ed;
-            background: white;
-        }
-
-        .post-input-container {
-            display: flex;
-            gap: 12px;
-        }
-
-        .avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .post-input-wrapper {
-            flex: 1;
-        }
-
-        .post-input {
-            width: 100%;
-            border: none;
-            font-size: 16px;
-            padding: 12px 0;
-            resize: none;
-            outline: none;
-            margin-bottom: 12px;
-        }
-
-        .post-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 12px;
-            border-top: 1px solid #e1e8ed;
-        }
-
-        .media-buttons {
-            display: flex;
-            gap: 16px;
-        }
-
-        .media-button {
-            background: none;
-            border: none;
-            color: #1da1f2;
-            cursor: pointer;
-            font-size: 18px;
-        }
-
-        .post-button {
-            background-color: #1da1f2;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 9999px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .post-button:disabled {
-            opacity: 0.5;
-            cursor: default;
-        }
-
-        
-        .post {
-            padding: 16px;
-            border-bottom: 1px solid #e1e8ed;
-            background: white;
-        }
-
-        .post-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-
-        .post-user-info h3 {
-            font-size: 15px;
-            font-weight: bold;
-        }
-
-        .post-user-info span {
-            color: #536471;
-            font-size: 14px;
-        }
-
-        .post-content {
-            margin-bottom: 12px;
-            font-size: 15px;
-        }
-
-        .post-image {
-            max-width: 100%;
-            border-radius: 16px;
-            margin-top: 12px;
-        }
-
-        .post-engagement {
-            display: flex;
-            justify-content: space-around;
-            padding-top: 12px;
-            color: #536471;
-        }
-
-        .engagement-button {
-            background: none;
-            border: none;
-            color: inherit;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        
-        .right-sidebar {
-            width: 350px;
-            padding: 20px;
-            position: fixed;
-            right: 0;
-            height: 100vh;
-            background: white;
-            border-left: 1px solid #e1e8ed;
+            margin-bottom: 32px;
         }
 
         .search-container {
-            margin-bottom: 20px;
+            margin-bottom: 24px;
+            width: 100%;
         }
 
         .search-input {
             width: 100%;
-            padding: 12px;
-            border-radius: 9999px;
-            border: 1px solid #e1e8ed;
-            background-color: #f7f9f9;
-            outline: none;
+            padding: 8px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
         }
 
-        .follow-suggestions {
-            background-color: #f7f9f9;
-            border-radius: 16px;
-            padding: 16px;
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
         }
 
-        .follow-suggestions h2 {
-            font-size: 20px;
-            margin-bottom: 12px;
+        .nav-button {
+            width: 100%;
+            padding: 8px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            font-weight: 600;
         }
 
-        .suggestion-item {
+        .back-button-container {
+            margin-top: auto;
+            padding-top: 24px;
+            width: 100%;
+        }
+
+        .back-button {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 12px 0;
-            border-bottom: 1px solid #e1e8ed;
-        }
-
-        .suggestion-info h3 {
-            font-size: 15px;
-            font-weight: bold;
-        }
-
-        .suggestion-info span {
-            color: #536471;
-            font-size: 14px;
-        }
-
-        .follow-button {
-            margin-left: auto;
-            background-color: #0f1419;
-            color: white;
-            border: none;
-            padding: 6px 16px;
-            border-radius: 9999px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .show-more {
-            color: #1da1f2;
+            justify-content: center;
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
             text-decoration: none;
-            display: block;
-            margin-top: 12px;
+            color: #333;
+        }
+
+        .arrow-left {
+            margin-right: 8px;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 24px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex-grow: 1;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .date {
+            color: #666;
+        }
+
+        .main-search-container {
+            flex-grow: 0;
+            width: 250px;
+        }
+
+        .main-search-input {
+            width: 100%;
+            padding: 8px;
             font-size: 14px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
         }
 
-        /* Image Preview */
-        .image-preview {
-            max-width: 100%;
-            border-radius: 16px;
-            margin-top: 12px;
-            display: none;
+        .profile-container {
+            display: flex;
+            justify-content: flex-end;
         }
 
-        @media (max-width: 1200px) {
-            .right-sidebar {
-                display: none;
-            }
-            .main-content {
-                margin-right: 0;
-            }
+        .profile-image {
+            border-radius: 50%;
         }
 
-        @media (max-width: 768px) {
-            .sidebar {
-                display: none;
-            }
-            .main-content {
-                margin-left: 0;
-            }
+
+        .friends-section {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 24px;
+        }
+
+        .title-search-container {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-grow: 1;
+            justify-content: flex-start;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .tab-button {
+            background: none;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .tab-button.active {
+            color: #333;
+            border-bottom: 2px solid #333;
+        }
+
+        .friends-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 16px;
+        }
+
+        .friend-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+
+        .friend-image {
+            border-radius: 50%;
+        }
+
+        .friend-info h3 {
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .friend-info p {
+            font-size: 14px;
+            color: #666;
+            margin: 4px 0;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        
+    <div class="flex min-h-screen bg-background">
+        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="logo">
-                <img src="Group 240.png" alt="FitFusion">
-                
+                <a href="/">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Group%20231-ivLFuRtzFkZqVIfB236SelxdqIOgM4.png" alt="FitFusion" width="150" height="50" class="h-auto">
+                </a>
             </div>
-            <nav>
-                <a href="#" class="nav-item">
-                    <i class="fas fa-home"></i>
-                    Página inicial
-                </a>
-                <a href="#" class="nav-item">
-                    <i class="fas fa-bell"></i>
-                    Notificações
-                </a>
-                <a href="mensagens.html" class="nav-item">
-                    <i class="fas fa-envelope"></i>
-                    Mensagens
-                </a>
-                <a href="perfil.html" class="nav-item">
-                    <i class="fas fa-user"></i>
-                    Perfil
-                </a>
-                <a href="config.html" class="nav-item">
-                    <i class="fas fa-cog"></i>
-                    Configurações
-                </a>
+            
+            <div class="search-container">
+                <input type="search" placeholder="Search" class="search-input">
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="/amigos" class="nav-button">Amigos</a>
+                <a href="/academias" class="nav-button">Academias</a>
+                <a href="/localizacao" class="nav-button">Localização</a>
             </nav>
+            
+            <div class="back-button-container">
+                <a href="perfil.html" class="back-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow-left"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+                    Voltar
+                </a>
+            </div>
         </aside>
 
-        
+        <!-- Main Content -->
         <main class="main-content">
-            <div class="post-form">
-                <div class="post-input-container">
-                    <img src="Ellipse 3.png" alt="Avatar" class="avatar">
-                    <div class="post-input-wrapper">
-                        <textarea class="post-input" placeholder="Como foi seu treino?" rows="3"></textarea>
-                        <img id="image-preview" class="image-preview">
-                        <div class="post-actions">
-                            <div class="media-buttons">
-                                <button class="media-button" id="image-button">
-                                    <i class="far fa-image"></i>
-                                </button>
-                                <button class="media-button">
-                                    <i class="far fa-smile"></i>
-                                </button>
-                                <button class="media-button">
-                                    <i class="fas fa-poll"></i>
-                                </button>
-                            </div>
-                            <button class="post-button" disabled>Postar</button>
-                        </div>
+            <div class="header">
+                <div class="title-search-container">
+                    <h1>Bem vindo ao seu ambiente social!</h1>
+                    <div class="main-search-container">
+                        <input type="search" placeholder="Search" class="main-search-input">
                     </div>
                 </div>
+                <div class="profile-container">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%202-RU3FhrAWXQQxd5i5QhEDcraUFwMAat.png" alt="Profile" width="40" height="40" class="profile-image">
+                </div>
             </div>
+            <p class="date">02/09/2024</p>
 
-            <div id="feed">
+            <div class="friends-section">
+                <h2>Meus amigos</h2>
                 
+                <div class="tabs">
+                    <button class="tab-button active" data-tab="amigos">Amigos</button>
+                    <button class="tab-button" data-tab="seguindo">Seguindo</button>
+                    <button class="tab-button" data-tab="seguidores">Seguidores</button>
+                    <button class="tab-button" data-tab="pedidos">Pedidos</button>
+                </div>
+                
+                <div class="tab-content" id="amigos-content">
+                    <div class="friends-grid">
+                        <!-- Friend cards will be dynamically inserted here by JavaScript -->
+                    </div>
+                </div>
             </div>
         </main>
-
-        
-        <aside class="right-sidebar">
-            <div class="search-container">
-                <input type="search" class="search-input" placeholder="Buscar no FitFusion">
-            </div>
-            <div class="follow-suggestions">
-                <h2>Quem seguir</h2>
-                <div class="suggestion-item">
-                    <img src="Ellipse 7.png" alt="Renato Cariani" class="avatar">
-                    <div class="suggestion-info">
-                        <h3>Renato Cariani</h3>
-                        <span>@renato</span>
-                    </div>
-                    <button class="follow-button">Seguir</button>
-                </div>
-                <div class="suggestion-item">
-                    <img src="Ellipse 10.png" alt="Cocielo" class="avatar">
-                    <div class="suggestion-info">
-                        <h3>Cocielo</h3>
-                        <span>@cocielo</span>
-                    </div>
-                    <button class="follow-button">Seguir</button>
-                </div>
-                <div class="suggestion-item">
-                    <img src="Ellipse 9.png" alt="Jessica" class="avatar">
-                    <div class="suggestion-info">
-                        <h3>Jessica</h3>
-                        <span>@jessica</span>
-                    </div>
-                    <button class="follow-button">Seguir</button>
-                </div>
-                <a href="#" class="show-more">Mostrar mais</a>
-            </div>
-        </aside>
     </div>
 
-    <input type="file" id="image-input" accept="image/*" style="display: none;">
-
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const postInput = document.querySelector('.post-input');
-            const postButton = document.querySelector('.post-button');
-            const imageButton = document.getElementById('image-button');
-            const imageInput = document.getElementById('image-input');
-            const imagePreview = document.getElementById('image-preview');
-            const feed = document.getElementById('feed');
-
-            
-            postInput.addEventListener('input', () => {
-                postButton.disabled = !postInput.value.trim() && !imagePreview.src;
-            });
-
-            
-            imageButton.addEventListener('click', () => {
-                imageInput.click();
-            });
-
-            imageInput.addEventListener('change', (e) => {
-                const file = e.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = (e) => {
-                        imagePreview.src = e.target.result;
-                        imagePreview.style.display = 'block';
-                        postButton.disabled = false;
-                    };
-                    reader.readAsDataURL(file);
-                }
-            });
-
-            
-            postButton.addEventListener('click', () => {
-                const content = postInput.value.trim();
-                const imageUrl = imagePreview.src;
-                
-                if (content || imageUrl) {
-                    const post = document.createElement('div');
-                    post.className = 'post';
-                    post.innerHTML = `
-                        <div class="post-header">
-                            <img src="Ellipse 3.png" alt="Avatar" class="avatar">
-                            <div class="post-user-info">
-                                <h3>Galo Branco</h3>
-                                <span>@GaloBranco • ${new Date().toLocaleTimeString()}</span>
-                            </div>
-                        </div>
-                        <div class="post-content">
-                            ${content ? `<p>${content}</p>` : ''}
-                            ${imageUrl ? `<img src="${imageUrl}" alt="Post image" class="post-image">` : ''}
-                        </div>
-                        <div class="post-engagement">
-                            <button class="engagement-button">
-                                <i class="far fa-comment"></i>
-                                <span>0</span>
-                            </button>
-                            <button class="engagement-button">
-                                <i class="fas fa-retweet"></i>
-                                <span>0</span>
-                            </button>
-                            <button class="engagement-button">
-                                <i class="far fa-heart"></i>
-                                <span>0</span>
-                            </button>
-                            <button class="engagement-button">
-                                <i class="far fa-share-square"></i>
-                            </button>
-                        </div>
-                    `;
-
-                    feed.insertBefore(post, feed.firstChild);
-                    postInput.value = '';
-                    imagePreview.src = 'image 7.png';
-                    imagePreview.style.display = 'none';
-                    postButton.disabled = true;
-                }
-            });
-
-            
-            const samplePosts = [
+        document.addEventListener('DOMContentLoaded', function() {
+            const friends = [
                 {
-                    content: "Treino de fortalecimento do tornozelo",
-                    image: "dfa63750-imagem-do-whatsapp-de-2024-09-08-as-16.19.02_d0b2079f-960x640%201.png"
+                    name: "Beyoncé",
+                    username: "@beyonce",
+                    status: "On-line",
+                    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Group%20238-E5smyssHOEbFEGcrOnVesPmU7W2iXK.png"
                 },
                 {
-                    content: "Treino leve pro jogo amanhã",
-                    image: null
+                    name: "Adele",
+                    username: "@adele",
+                    status: "On-line",
+                    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%205-4BJolb73GVcPTQQ2okjoGBAw2FFbGF.png"
+                },
+                {
+                    name: "Ed Sheeran",
+                    username: "@edsheeran",
+                    status: "Offline",
+                    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Group%20239-c5z6CHWh8tcxMnYT3TMmf12Q3iFiMh.png"
+                },
+                {
+                    name: "Neymar Jr",
+                    username: "@neymar",
+                    status: "Offline",
+                    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%207-cjQZAjVEc5YBy9bMW8ng7xKQ3FUm5W.png"
                 }
             ];
 
-            samplePosts.forEach(post => {
-                const postElement = document.createElement('div');
-                postElement.className = 'post';
-                postElement.innerHTML = `
-                    <div class="post-header">
-                        <img src="image 7.png" alt="Avatar" class="avatar">
-                        <div class="post-user-info">
-                            <h3>NeymarJr</h3>
-                            <span>@NeymarJr • ${new Date().toLocaleTimeString()}</span>
+            const friendsGrid = document.querySelector('.friends-grid');
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const searchInputs = document.querySelectorAll('.search-input');
+            const mainSearchInput = document.querySelector('.main-search-input');
+
+
+            function renderFriends(friendsToRender) {
+                friendsGrid.innerHTML = '';
+                friendsToRender.forEach(friend => {
+                    const friendCard = document.createElement('div');
+                    friendCard.className = 'friend-card';
+                    friendCard.innerHTML = `
+                        <img src="${friend.image}" alt="${friend.name}" width="60" height="60" class="friend-image">
+                        <div class="friend-info">
+                            <h3>${friend.name}</h3>
+                            <p>${friend.username}</p>
+                            <p>${friend.status}</p>
                         </div>
-                    </div>
-                    <div class="post-content">
-                        ${post.content ? `<p>${post.content}</p>` : ''}
-                        ${post.image ? `<img src="${post.image}" alt="Post image" class="post-image">` : ''}
-                    </div>
-                    <div class="post-engagement">
-                        <button class="engagement-button">
-                            <i class="far fa-comment"></i>
-                            <span>0</span>
-                        </button>
-                        <button class="engagement-button">
-                            <i class="fas fa-retweet"></i>
-                            <span>0</span>
-                        </button>
-                        <button class="engagement-button">
-                            <i class="far fa-heart"></i>
-                            <span>0</span>
-                        </button>
-                        <button class="engagement-button">
-                            <i class="far fa-share-square"></i>
-                        </button>
-                    </div>
-                `;
-                feed.appendChild(postElement);
+                    `;
+                    friendsGrid.appendChild(friendCard);
+                });
+            }
+
+            renderFriends(friends);
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    // Here you would typically fetch and display different content based on the selected tab
+                    // For this example, we're just showing the same friends for all tabs
+                    renderFriends(friends);
+                });
             });
+
+            //Added event listener for main search input
+            mainSearchInput.addEventListener('input', function() {
+                const searchQuery = this.value.toLowerCase();
+                const filteredFriends = friends.filter(friend => 
+                    friend.name.toLowerCase().includes(searchQuery) || 
+                    friend.username.toLowerCase().includes(searchQuery)
+                );
+                renderFriends(filteredFriends);
+            });
+
+            //Removed event listener for other search inputs as they are no longer needed.
+
         });
     </script>
 </body>

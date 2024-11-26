@@ -1,226 +1,276 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="globals.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="desktop">
-      <div class="div">
-        <div class="overlap">
-          <img class="rectangle" src="img/rectangle-8.svg" />
-          <div class="group">
-            <div class="overlap-group">
-              <div class="ellipse"></div>
-              <img class="vector" src="img/vector-1.svg" />
-            </div>
-          </div>
-          <div class="text-wrapper">Search</div>
-          <div class="text-wrapper-2">02/09/2024</div>
-          <p class="p">Bem vindo ao seu histórico de treino Fabio!</p>
-          <div class="text-wrapper-3">Treino realizado essa semana.</div>
-          <div class="email-form"></div>
-          <img class="sign-in-button" src="img/sign-in-button.png" />
-          <img class="img" src="img/sign-in-button-1.png" />
-          <p class="dia-peito-e-tr">
-            <span class="span">Dia 1: Peito e Tríceps<br /><br /></span>
-            <span class="text-wrapper-4"
-              >Aquecimento: 10 minutos de cardio (esteira, bicicleta, elíptico)<br />Supino reto: 4 séries de 8-12
-              repetições<br />Supino inclinado com halteres: 3 séries de 8-12 repetições<br />Crossover (ou crucifixo):
-              3 séries de 12-15 repetições<br />Mergulho (ou tríceps na barra): 3 séries de 8-12 repetições<br />Tríceps
-              testa (ou extensão com barra): 3 séries de 10-15 repetições<br />Tríceps no pulley: 3 séries de 12-15
-              repetições <br
-            /></span>
-            <span class="text-wrapper-5"><br /><br /></span>
-            <span class="text-wrapper-6">Dia 2: Costas e Bíceps<br /><br /></span>
-            <span class="text-wrapper-4"
-              >Aquecimento: 10 minutos de cardio<br />Puxada na frente (pulldown): 4 séries de 8-12 repetições<br />Remada
-              curvada com barra: 4 séries de 8-12 repetições<br />Remada com halteres: 3 séries de 10-12 repetições<br />Rosca
-              direta com barra: 3 séries de 10-12 repetições<br />Rosca alternada com halteres: 3 séries de 12-15
-              repetições<br />Rosca concentrada: 3 séries de 12-15 repetições<br
-            /></span>
-            <span class="text-wrapper-5"><br /><br /></span>
-            <span class="text-wrapper-7">Dia 3: Pernas e Abdômen<br /><br /></span>
-            <span class="text-wrapper-4"
-              >Aquecimento: 10 minutos de cardio<br />Agachamento: 4 séries de 8-12 repetições<br />Leg press: 4 séries
-              de 10-15 repetições<br />Extensão de pernas: 3 séries de 12-15 repetições<br />Flexão de pernas: 3 séries
-              de 12-15 repetições<br />Panturrilhas em pé: 4 séries de 15-20 repetições<br />Crunch: 3 séries de 15-20
-              repetições<br />Prancha: 3 séries de 30-60 segundos<br
-            /></span>
-            <span class="text-wrapper-5"><br /><br /></span>
-          </p>
-          <img class="sign-in-button-2" src="img/sign-in-button-2.png" />
-          <img class="sign-in-button-3" src="img/sign-in-button-3.png" />
-          <img class="sign-in-button-4" src="img/sign-in-button-4.png" />
-          <p class="dia-ombros-e-trap">
-            <span class="span">Dia 4: Ombros e Trapézio<br /><br /></span>
-            <span class="text-wrapper-4"
-              >Aquecimento: 10 minutos de cardio<br />Desenvolvimento com barra ou halteres: 4 séries de 8-12
-              repetições<br />Elevação lateral com halteres: 3 séries de 12-15 repetições<br />Elevação frontal com
-              halteres: 3 séries de 12-15 repetições<br />Encolhimento de ombros com barra: 4 séries de 10-15
-              repetições<br />Face pull (ou puxada para o rosto): 3 séries de 12-15 repetições<br
-            /></span>
-            <span class="text-wrapper-5"><br /><br /></span>
-            <span class="span">Dia 5: Cardio e Corpo Inteiro<br /><br /></span>
-            <span class="text-wrapper-4"
-              >Aquecimento: 10 minutos de cardio<br />Circuito funcional: 3 voltas, incluindo:<br />Burpees: 15
-              repetições<br />Flexões: 15 repetições<br />Agachamentos com salto: 15 repetições<br />Abdominais tipo
-              bicicleta: 20 repetições<br />Cardio intenso (HIIT): 20 minutos (alternando entre alta e baixa
-              intensidade)<br />Alongamento: 10 minutos
-            </span>
-          </p>
-          <div class="overlap-wrapper">
-            <div class="overlap-2">
-              <img class="arrow-left-contained" src="img/arrow-left-contained-02-1.svg" />
-              <div class="rectangle-2"></div>
-              <div class="text-wrapper-8">Voltar</div>
-            </div>
-          </div>
-          <img class="sign-in-button-5" src="img/sign-in-button-5.png" />
-          <img class="sign-in-button-6" src="img/sign-in-button-6.png" />
-          <img class="sign-in-button-7" src="img/sign-in-button-7.png" />
-          <img class="sign-in-button-8" src="img/sign-in-button-8.png" />
-          <div class="text-wrapper-9">Voltar</div>
-          <div class="text-wrapper-10">Semana passada</div>
-          <div class="text-wrapper-11">Salvar</div>
-          <div class="text-wrapper-12">Próxima semana</div>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitFusion - Histórico de Treino</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .welcome {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .welcome h1 {
+            font-size: 1.75rem;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .welcome span {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .search-profile {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .search-bar {
+            position: relative;
+        }
+
+        .search-bar input {
+            padding: 0.75rem 1rem;
+            padding-left: 2.5rem;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            width: 300px;
+            font-size: 0.9rem;
+        }
+
+        .search-bar::before {
+            content: "🔍";
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .workout-container {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .workout-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .workout-header h2 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: #000;
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: #666;
+            border: 1px solid #eee;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .workout-day {
+            margin-bottom: 2rem;
+        }
+
+        .day-header {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .exercise-list {
+            list-style-none;
+            padding-left: 1.5rem;
+        }
+
+        .exercise-item {
+            margin-bottom: 0.75rem;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+        }
+
+        .nav-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            background: #f8f8f8;
+            border: 1px solid #eee;
+        }
+
+        .nav-btn.active {
+            background: #000;
+            color: white;
+            border: none;
+        }
+
+        .back-button {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+            text-decoration: none;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .back-button:hover {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="welcome">
+            <h1>Bem vindo ao seu histórico de treino Fabio!</h1>
+            <span>02/09/2024</span>
         </div>
-        <img class="image" src="img/image-2.png" />
-      </div>
-    </div>
-  </body>
+        <div class="search-profile">
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+            </div>
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%202%20(1)-9xXnrBY8m5gt5WeBhTIJLkyVz0rBBy.png" alt="Profile" class="user-avatar">
+        </div>
+    </header>
+
+    <main class="workout-container">
+        <div class="workout-header">
+            <h2>Treino realizado essa semana.</h2>
+            <div class="btn-group">
+                <button class="btn btn-secondary">Voltar</button>
+                <button class="btn btn-primary">Salvar</button>
+            </div>
+        </div>
+
+        <div class="workout-content">
+            <div class="workout-day">
+                <div class="day-header">Dia 1: Peito e Tríceps</div>
+                <ul class="exercise-list">
+                    <li class="exercise-item">1. Aquecimento: 10 minutos de cardio (esteira, bicicleta, elíptico)</li>
+                    <li class="exercise-item">2. Supino reto: 4 séries de 8-12 repetições</li>
+                    <li class="exercise-item">3. Supino inclinado com halteres: 3 séries de 8-12 repetições</li>
+                    <li class="exercise-item">4. Crossover (ou crucifixo): 3 séries de 12-15 repetições</li>
+                    <li class="exercise-item">5. Mergulho (ou tríceps na barra): 3 séries de 8-12 repetições</li>
+                    <li class="exercise-item">6. Tríceps testa (ou extensão com barra): 3 séries de 10-15 repetições</li>
+                    <li class="exercise-item">7. Tríceps no pulley: 3 séries de 12-15 repetições</li>
+                </ul>
+            </div>
+
+            <div class="workout-day">
+                <div class="day-header">Dia 2: Costas e Bíceps</div>
+                <ul class="exercise-list">
+                    <li class="exercise-item">1. Aquecimento: 10 minutos de cardio</li>
+                    <li class="exercise-item">2. Puxada na frente (pulldown): 4 séries de 8-12 repetições</li>
+                    <li class="exercise-item">3. Remada curvada com barra: 4 séries de 8-12 repetições</li>
+                    <li class="exercise-item">4. Remada com halteres: 3 séries de 10-12 repetições</li>
+                    <li class="exercise-item">5. Rosca direta com barra: 3 séries de 10-12 repetições</li>
+                    <li class="exercise-item">6. Rosca alternada com halteres: 3 séries de 12-15 repetições</li>
+                    <li class="exercise-item">7. Rosca concentrada: 3 séries de 12-15 repetições</li>
+                </ul>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="nav-btn active">Treino passado</button>
+                <button class="nav-btn">Próximo treino</button>
+            </div>
+        </div>
+
+        <a href="perfil.html" class="back-button">← Voltar</a>
+    </main>
+
+    <script>
+        // Add event listeners for buttons
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function() {
+                console.log('Button clicked:', this.textContent);
+            });
+        });
+
+        document.querySelectorAll('.nav-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all nav buttons
+                document.querySelectorAll('.nav-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                // Add active class to clicked button
+                this.classList.add('active');
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.querySelector('.search-bar input');
+        searchInput.addEventListener('input', function(e) {
+            console.log('Search query:', e.target.value);
+            // Implement search functionality here
+        });
+    </script>
+</body>
 </html>
-
-
-
-
-*CSS PRINCIPAL*
-
-
-.desktop {
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
-}
-
-.desktop .div {
-  background-color: #ffffff;
-  width: 1548px;
-  height: 1024px;
-  position: relative;
-}
-
-.desktop .overlap {
-  position: absolute;
-  width: 1431px;
-  height: 968px;
-  top: 56px;
-  left: 0;
-}
-
-.desktop .rectangle {
-  width: 1405px;
-  height: 967px;
-  top: 1px;
-  position: absolute;
-  left: 0;
-}
-
-.desktop .group {
-  position: absolute;
-  width: 23px;
-  height: 24px;
-  top: 15px;
-  left: 966px;
-}
-
-.desktop .overlap-group {
-  position: relative;
-  width: 24px;
-  height: 25px;
-}
-
-.desktop .ellipse {
-  position: absolute;
-  width: 22px;
-  height: 23px;
-  top: 0;
-  left: 0;
-  border-radius: 11px/11.5px;
-  border: 1.5px solid;
-  border-color: #b0b0b0;
-}
-
-.desktop .vector {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  top: 18px;
-  left: 17px;
-}
-
-.desktop .text-wrapper {
-  position: absolute;
-  height: 22px;
-  top: 16px;
-  left: 999px;
-  font-family: "Raleway", Helvetica;
-  font-weight: 500;
-  color: #b0b0b0;
-  font-size: 19px;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
-}
-
-.desktop .text-wrapper-2 {
-  position: absolute;
-  height: 23px;
-  top: 64px;
-  left: 111px;
-  font-family: "Radio Canada", Helvetica;
-  font-weight: 500;
-  color: #b0b0b0;
-  font-size: 19px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.desktop .p {
-  position: absolute;
-  width: 461px;
-  height: 61px;
-  top: 0;
-  left: 106px;
-  background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(102, 102, 102) 100%);
-  -webkit-background-clip: text !important;
-  background-clip: text;
-
-
-
-
-
-*CSS PRINCIPAL*
-
-
-@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-@import url("https://fonts.googleapis.com/css?family=Raleway:500,700|Radio+Canada:500,400|Radley:400|Poppins:500");
-{-webkit-font-smoothing: antialiased;
-box-sizing: border-box;
-}
-html,
-body {
-  margin: 0px;
-  height: 100%;
-}
-/* a blue color as a generic focus style */
-button:focus-visible {
-  outline: 2px solid #4a90e2 !important;
-  outline: -webkit-focus-ring-color auto 5px !important;
-}
-a {
-  text-decoration: none;
-}
